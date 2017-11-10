@@ -55,8 +55,14 @@
 
 div.shell {
   display: block;
-  width: 670px;
+  width: 950px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 950px) {
+  div.shell {
+    width: 95%
+  }
 }
 
 a#forkme_banner {
@@ -79,7 +85,7 @@ a#forkme_banner:hover {
 /* content */
 
 body {
-  background: #ece4d8;
+  background: #f7f3ed;
   font: normal normal 15px/1.5 Georgia, Palatino,” Palatino Linotype”, Times, “Times New Roman”, serif;
   color: #544943;
   -webkit-font-smoothing: antialiased;
@@ -165,7 +171,7 @@ hr {
 }
 
 code {
-  background: #fff6e9;
+  background: #ffffff;
   font: normal normal .8em/1.7 "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
   padding: 0 5px 1px;
 }
@@ -173,7 +179,7 @@ code {
 pre {
   margin: 10px 0 20px;
   padding: .7em;
-  background: #fff6e9;
+  background: #ffffff;
   border-bottom: 2px solid #bdb6ad;
   font: normal normal .9em/1.7 "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
   overflow: auto;
@@ -185,7 +191,7 @@ pre code {
 }
 
 table {
-  background: #fff6e9;
+  background: #ffffff;
   display: table;
   width: 100%;
   border-collapse: separate;
@@ -200,7 +206,7 @@ tr {
 th {
   display: table-cell;
   padding: 2px 10px;
-  border: solid #ece4d8;
+  border: solid #ffffff;
   border-width: 0 2px 2px 0;
   color: #cd596b;
   font-family: 'Open Sans', Myriad, Calibri, sans-serif;
@@ -211,7 +217,7 @@ th {
 td {
   display: table-cell;
   padding: 0 .7em;
-  border: solid #ece4d8;
+  border: solid #fffff;
   border-width: 0 2px 2px 0;
 }
 

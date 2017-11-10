@@ -90,7 +90,7 @@ In the corresponding stylesheet, a class is selected with a ".":
 
 ```css
 .class {
-  //css goes here
+  /* css goes here */
 }
 ```
 **Add a class to one of your `<p>` or `<h>` elements.** You can call it whatever you want:
@@ -138,4 +138,7 @@ div{
   /* stylng goes here */
 }
 ```
-**Try selecting all your `<p>` elements in your codepen.**
+**Try selecting all your `<p>` elements in your codepen,** and then add some styling to them -- change up the font, make them bigger/smaller, add some color, or perhaps some background-color.
+
+
+That's CSS basics -- not too bad, right? CSS starts to get really complicated when there are a lot of elements on the screen arranged in complex patterns, but the fundamentals will always be the same. Dive deep into CSS documentation if you can, and take a look at some guides to more obscure attributes and techniques.
