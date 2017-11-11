@@ -119,8 +119,11 @@ class Car {
 
 Use **methods** as a function that can only be called by your object.
 ```js
-function changeMileage(miles) {
-  this.miles += miles
+class Car {
+  /* other code */
+  changeMileage(miles) {
+    this.miles += miles
+  }
 }
 ```
 
