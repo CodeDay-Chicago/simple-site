@@ -17,7 +17,7 @@ React is a way to break down a webpage into several smaller **components**.
 ```
 This allows you to not repeat yourself and thus code better.
 
-## JSX
+### JSX
 This is a special type of Javascript that allows you to write "html". There are some differences:
 ```
 <Image />		  // must always close tags
@@ -29,7 +29,7 @@ This is a special type of Javascript that allows you to write "html". There are 
 <p className='myclass' />         // the class attribute is className
 ```
 
-## Defining components
+### Defining components
 React components are classes with several special methods.
 
 ```
@@ -52,16 +52,19 @@ export class Main extends React.Component {
 }
 ```
 You can use the classes as tags to form more components, building up the **component heirarchy**.
-The `React.Component` class has several important methods, in order of being called:
+`render` is just one of `React.Component`'s special methods:
+
+![
 | name | function
 |-
-| `componentWillMount` |
-| `render` |
-| `componentDidMount` |
-| `componentWillReceiveProps` |
-| `shouldComponentUpdate` |
-| `componentWillUpdate` |
-| `render` |
-| `componentDidUpdate` |
-| `render` | returns the html
-| `
+| `componentWillMount` | called right before the component is first mounted
+| `render` | should return the html to represent the component
+| `componentDidMount` | called after the component is first mounted
+| `componentWillReceiveProps` | called when the component recieves new props
+| `shouldComponentUpdate` | should return true or false depending on whether the component should update
+| `componentWillUpdate` | called before the component updates
+| `componentDidUpdate` | called after the component updates
+](assets/images/react-lifecycle.png)
+
+### State
+State allows you to cause the Component to rerender when a variable changes
