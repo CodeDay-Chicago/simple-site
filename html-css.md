@@ -18,11 +18,13 @@ Also the web development world is [one of the biggest communities out there](htt
 Personal recommendations:
 Serif:
 * Playfair Display
+
 Sans-serif:
 * Montserrat
 * Comfortaa
 * Lato
 * Helvetica neue
+
 Monospace:
 * Inconsolata
 * Menlo
