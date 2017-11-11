@@ -133,6 +133,16 @@ var myCoolCar = new Car(2000,"Zippy 2.0", "#FF0000")
 ---
 ### Canvas
 todo: organize code
+Now we will be interacting with a thing called **Canvas** which is a simple viewport where you can easily render 2d objects. Add a Canvas object using the `<canvas>` tag
+```html
+<body>
+  <!-- DOM/HTML -->
+  <canvas id="c"></canvas>
+</body>
+```
+
+Now the rest of the work will be done in JS. First we need to set up the parameters of our canvas. This sets up the width and height of our canvas, initializes it, and sets up some easy variables for us to access in the future. The ctx variable is going to be the variable that we are going to draw things to.
+
 ```js
 const VIEWPORT_WIDTH = 250;
 const VIEWPORT_HEIGHT = 250;
@@ -142,6 +152,7 @@ c = document.getElementById('c');
 c.width=VIEWPORT_WIDTH;
 c.height=VIEWPORT_HEIGHT;
 ctx = c.getContext('2d');
+```
 
 class Player {
   constructor(pos,speed,color,size) {
