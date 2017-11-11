@@ -20,7 +20,7 @@ React is a way to break down a webpage into several smaller **components**.
   <button>Follow me on MySpace!</Button>
 </div>
 ```
-```jsx
+```
 <div>
   <AnnoyingButton />
   <Content />
@@ -31,7 +31,8 @@ This allows you to not repeat yourself and thus code better.
 
 ### JSX
 This is a special type of Javascript that allows you to write "html". There are some differences:
-```jsx
+{% raw %}
+```
 <Image />   // must always close tags
 <Canvas />    // even for double tag elements
 
@@ -43,11 +44,12 @@ This is a special type of Javascript that allows you to write "html". There are 
 <p style={{color: 'black'}} />	  // style attribute is a js object (notice the curly brackets)
 <p className='myclass' />         // the class attribute is className
 ```
+{% endraw %}
 
 ### Defining components
 React components are classes with several special methods.
 
-```jsx
+```
 import React from 'react'
 
 export class CoolText extends React.Component {
@@ -68,7 +70,7 @@ export class Main extends React.Component {
 ```
 You can use the classes as tags to form more components, building up the **component heirarchy**.
 You can then actually render a component by using ReactDOM:
-```jsx
+```
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -124,7 +126,7 @@ ReactDOM.render(
 ### State
 State essentially allows you to rerender a Component upon a variable change. [demo](https://codesandbox.io/s/github/codeday-chicago/react-example-1/tree/master/)
 ```this.setState({})``` modifies the current state object and rerenders. **State is immutable**, so this is bad.
-```jsx
+```
 class Component extends React.Component {
   constructor (props) {
     super (props)
@@ -140,7 +142,8 @@ class Component extends React.Component {
 
 ### Props
 Props allow you to pass data down the Component tree
-```jsx
+{% raw %}
+```
 class MyButton extends React.Component {
   render () { // onClick is the standard click event attribute
     return (
@@ -168,6 +171,8 @@ class Main extends React.Component {
   }
 }
 ```
+{% endraw %}
+
 You can pass "arguments" to customize the Component or pass functions to [help passing data](https://www.andrewhfarmer.com/component-communication/).
 All of the passed props get put into the `this.props` object.
 Changing the props will cause the Component to rerender.
@@ -179,7 +184,7 @@ With controlled elements, you store the state of the element inside of the Compo
 You need to:
 * Define an `onChange` function to update the stored state
 * Passed the stored state back into the element with the value attribute
-```jsx
+```
 class Main extends React.Component {
   state = { value: '' }
 
@@ -203,7 +208,7 @@ To get the value out of an `event` object:
 ### Uncontrolled
 With uncontrolled elements, you access the state of the element from the rendered element.
 This is done through `ref`, which is a special React attribute that takes a function that is called with the rendered element as the argument.
-```jsx
+```
 class Main extends React.Component {
   render () {
     return (
@@ -229,7 +234,7 @@ class Main extends React.Component {
 ## Advanced JSX
 ### Rendering conditionally
 `&&` and the `bool ? exp : exp` are used for JSX conditionals.
-```jsx
+```
 class Main extends React.Component {
   render () {
     return (
@@ -255,7 +260,7 @@ class Main extends React.Component {
 
 ### Loops
 `.map` is used for displaying a list. **Each list item must have a `key` attribute**
-```jsx
+```
 class PeopleView extends React.Component {
   render () {
     // the enclosing with a div rule still applies
