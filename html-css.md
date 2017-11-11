@@ -23,6 +23,9 @@ Sans-serif:
 * Comfortaa
 * Lato
 * Helvetica neue
+Monospace:
+* Inconsolata
+* Menlo
 
 ---
 ### Basics
