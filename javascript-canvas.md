@@ -124,7 +124,7 @@ Last but not least the most important of which is the *string*
 'Hello'.length // = 5
 ```
 
-#### *Conditional Statements* There are a number of conditional statements in JS:
+#### *Conditional Statements* can be used to create programs flow:
 
 `if` statements test whether a condition is true and can be followed by an `else if` or `else` statement if the initial if statement is not true.
 ```js
@@ -197,6 +197,29 @@ Some online code snippet editors like Codepen automatically link your scripts
   </body>
 </html>
 ```
+#### Objects
+```js
+// JavaScript's objects are equivalent to 'dictionaries' or 'maps' in other
+// languages: an unordered collection of key-value pairs.
+let myObj = {key1: 'Hello', key2: 'World'}
+
+// Keys are strings, but quotes aren't required if they're a valid
+// JavaScript identifier. Values can be any type.
+let myObj = {myKey: 'myValue', 'my other key': 4}
+
+// Object attributes can also be accessed using the subscript syntax,
+myObj['my other key'] // = 4
+
+// ... or using the dot syntax, provided the key is a valid identifier.
+myObj.myKey // = 'myValue'
+
+// Objects are mutable values can be changed and new keys added.
+myObj.myThirdKey = true
+
+// If you try to access a value that's not yet set, you'll get undefined.
+myObj.myFourthKey // = undefined
+```
+
 ### Object Oriented Programming!
 
 Object oriented programming uses **classes** which define objects. Think of it as making your own type of variable.
