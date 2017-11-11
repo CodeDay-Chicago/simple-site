@@ -15,7 +15,6 @@ A good website for all-things Javascript is the [Mozilla Developer Network](deve
 
 ---
 ### Basics & Syntax
-The obligatory 'Hello World!' script in JS:
 ```js
 console.log('Hello World!')
 ```
@@ -32,16 +31,13 @@ Declaring only needs to happen once, so you should never redeclare variables.
 let number = 3
 let number = 4 // error
 ```
-**Semicolons** are not needed in javascript unless you want to add multiple statements onto a single line
-
-You can change variables by using the format: **name = value**, but make sure that the variables have been declared!
-```js
-myBool = false
-myInt = 4
-myString = 'Heres some more text!'
+bool = false
+int = 4
+string = "Heres some more text!"
 ```
 
 **Operators** modify or test variables. They consist of
+>>>>>>> 85901a1048061b6b959a450b608fa9c5017806c0
 
 | Operator | Action
 |-
@@ -77,7 +73,6 @@ while (j < 5) {
 }
 ```
 
-Use **functions** in order to encapsulate a certain task combining a certain set of instructions into an easily accessable piece of code. There are multiple ways of defining functions:
 ```js
 function add (a, b) {
   return a + b
@@ -87,14 +82,6 @@ const add = (a, b) => {
   return a + b
 } // use this for inline functions
 ```
-
----
-### Implementing Javascript in a Webpage
-Remember HTML? Well we need to **link** our script to the HTML file to load the script. You can do this in multiple ways:
-```html
-<html>
-  <head>
-    <script type="text/javascript" src="script1.js"></script>
   </head>
   <body>
     <!-- DOM/HTML -->
