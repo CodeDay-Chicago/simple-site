@@ -98,17 +98,36 @@ Some online code snippet editors like codepen automatically link your scripts
 ---
 ### OOP!
 
-Object oriented programming uses **classes** which define objects. 
-
-**Constructors** function as a template when initializing an object
-
-Use **methods** as a compartmentalized function
+Object oriented programming uses **classes** which define objects. Think of it as making your own type of variable.
 ```js
-function add(a,b) {
-  return a+b
+//class declaration
+class Car {
+	//insert code for the class
 }
 ```
 
+**Constructors** function as a template when initializing an object. Think of it as setting the parameters/blueprint for your object.
+```js
+class Car {
+	constructor(mileage,model,color) {
+		this.color = color
+		this.miles = mileage
+		this.model = model
+	}
+}
+```
+
+Use **methods** as a function that can only be called by your object.
+```js
+function changeMileage(miles) {
+  this.miles += miles
+}
+```
+
+You can then use the template of the constructor to store an instance of your object as a variable. Think of it as filling in the holes that were in your blueprint.
+```js
+var myCoolCar = new Car(2000,"Zippy 2.0", "#FF0000")
+```
 
 
 ---
