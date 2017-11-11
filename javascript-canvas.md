@@ -96,7 +96,7 @@ There are two scripts:
 Some online code snippet editors like codepen automatically link your scripts
 
 ---
-### OOP!
+### Object Oriented Programming!
 
 Object oriented programming uses **classes** which define objects. Think of it as making your own type of variable.
 ```js
@@ -141,8 +141,7 @@ Now we will be interacting with a thing called **Canvas** which is a simple view
 </body>
 ```
 
-Now the rest of the work will be done in JS. First we need to set up the parameters of our canvas. This sets up the width and height of our canvas, initializes it, and sets up some easy variables for us to access in the future. The ctx variable is going to be the variable that we are going to draw things to.
-
+Now the rest of the work will be done in JS. First we need to set up the parameters of our canvas. This sets up the width and height of our canvas, initializes it, and sets up some easy variables for us to access in the future. The ctx variable is going to be the variable that we are going to draw things to. The keys variable is where we will store the keys that are currently pressed down.
 ```js
 const VIEWPORT_WIDTH = 250;
 const VIEWPORT_HEIGHT = 250;
@@ -154,8 +153,31 @@ c.height=VIEWPORT_HEIGHT;
 ctx = c.getContext('2d');
 ```
 
+Now we are going to define a clear function, which will define the background of our canvas. We need this to call on every frame in order to clear the entire screen and redraw it.
+```js
+function clear(){
+  ctx.fillStyle = '#00ff00';
+  ctx.beginPath();
+  ctx.rect(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
+  ctx.closePath();
+  ctx.fill();
+}
+```
+
+
+Now we need to create a **Game Loop** which will infinitely run our game. At the moment it just infinitely redraws our background every frame.
+```js
+function GameLoop(){
+  clear();
+  gLoop = setTimeout(GameLoop, 1000 / 50);
+}
+GameLoop();
+```
+
+Now we want to define a **Player Class** which can be reused for multiple players. This will have parameters inside of the constructor so that we can differentiate between different players. There are also methods that will do important functions for the game.
+```js
 class Player {
-  constructor(pos,speed,color,size) {
+  constructor(pos,speed,color) {
     this.pos = pos;
     this.startx = pos[0];
     this.starty = pos[1];
@@ -205,23 +227,26 @@ class Player {
     this.pos[1]=this.starty
   }
 }
+```
 
+Now lets initialize two players. One red and one blue:
+```js
 player1 = new Player([0,0],2,"#0000FF")
 player2 = new Player([220,220],4,"FF0000")
+```
 
-function clear(){
-  ctx.fillStyle = '#00ff00';
-  ctx.beginPath();
-  ctx.rect(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
-  ctx.closePath();
-  ctx.fill();
-}
+We will also want to get information about keypresses which we store into the keys array
+```js
 document.body.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
 });
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
+```
+
+Now we implement the player **input, movement, and rendering** into the Game Loop
+```js
 function GameLoop(){
   clear();
   //player 1
@@ -266,7 +291,5 @@ GameLoop();
 ---
 
 ### Try it out!
-Head on over to [Codepen](https://codepen.io/pen) and make a simple website with text and at least one image.
+Head on over to [Codepen](https://codepen.io/pen) and make a simple website with canvas
 ---
-
-## Canvas
