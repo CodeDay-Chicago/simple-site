@@ -107,6 +107,16 @@ There are two scripts:
 * `script2.js` loads while the DOM is being loaded
 
 Some online code snippet editors like Codepen automatically link your scripts
+
+---
+### Modifying HTML
+
+`document.getElementById('id')` gets an HTML DOM object. You can change certain attributes of the element, for example the inner HTML of the element, by using `document.getElementById('id').innerHTML = 'Hello World'`. This would change the HTML that is nested inside of the element that you get to text which reads "Hello World".
+
+You can also create elements using  `var element = document.createElement("element")` and set it as a child of another object with `originalElement.appendChild(element)`
+
+Theres a ton of other things in modifying HTML with JS, but we want to push you to use react, which allows you to do this in a much more streamlined way.
+
 ---
 ### Object Oriented Programming!
 
