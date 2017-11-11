@@ -8,6 +8,8 @@ layout: page
 Remember that Google is an excellent tool for looking up *anything*.
 A good website for all-things HTML/CSS is the [Mozilla Developer Network](developer.mozilla.org/en-US/docs).
 
+Also the web development world is [one of the biggest communities out there](https://coggle.it/diagram/Vz9LvW8byvN0I38x), which is one of the reasons why it's so great.
+
 ---
 ### Basics
 **Tags** represent parts of a webpage. Most are paired
@@ -18,7 +20,7 @@ some are not.
 ```html
 <image>
 ```
-You can nest tags with other tags or text 
+You can nest tags with other tags or text
 ```html
 <body>
   <header>
@@ -84,7 +86,7 @@ CSS is written in disparate stylesheets -- you make a .css file and then import 
 Good CSS follows good HTML, and it's important to understand how html elements and CSS instructions relate.
 
 #### Classes
-The most commonly used selector is the class. You specify a class in html as ```<element class="className">```, just as you would any other element. 
+The most commonly used selector is the class. You specify a class in html as ```<element class="className">```, just as you would any other element.
 
 In the corresponding stylesheet, a class is selected with a ".":
 
@@ -119,11 +121,11 @@ For example, we can add:
   color: blue;
 }
 ```
-Which will make the text blue! We could also use a hex code like `#11d8ad` to customize outside the normal colors. 
+Which will make the text blue! We could also use a hex code like `#11d8ad` to customize outside the normal colors.
 
 #### The Element Selector
 
-Another option for selecting elements in CSS is the global element selector. Instead of having to add attributes to each html element. 
+Another option for selecting elements in CSS is the global element selector. Instead of having to add attributes to each html element.
 
 This works like this:
 
