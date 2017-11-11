@@ -13,6 +13,25 @@ A good website for all-things HTML/CSS is the [Mozilla Developer Network](develo
 
 Also the web development world is [one of the biggest communities out there](https://coggle.it/diagram/Vz9LvW8byvN0I38x), which is one of the reasons why it's so great.
 
+[CSS Cheatsheet](https://www.smashingmagazine.com/wp-content/uploads/images/css3-cheat-sheet/css3-cheat-sheet.pdf)
+[Color tool](https://material.io/color)
+[Google fonts](https://fonts.google.com/)
+[Best Google fonts](https://www.typewolf.com/google-fonts)
+
+Personal recommendations:
+Serif:
+* Playfair Display
+
+Sans-serif:
+* Montserrat
+* Comfortaa
+* Lato
+* Helvetica neue
+
+Monospace:
+* Inconsolata
+* Menlo
+
 ---
 
 ### Basics
