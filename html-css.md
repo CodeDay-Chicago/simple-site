@@ -245,3 +245,36 @@ Take a minute and try to figure out what css attributes we'll use to make a butt
     display: inline-block;
     font-size: 16px;
 }
+```
+
+Here's the end result: https://codepen.io/justinwzig/pen/VrbLXa
+
+We can also add some animation. CSS does animation with simple addendunms to selectors. We'll use the `::hover` addition.
+
+```css
+.button {
+    border: none;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-face: sans;
+    display: inline-block;
+    font-size: 16px;
+}
+.button::hover {
+    border: none;
+    background-color: #3f9b43; /* Dark Green */
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-face: sans;
+    text-align: center
+    display: inline-block;
+    font-size: 16px;
+    font-weight:bold;
+}
+```
+
+That's the basics of user interactivity. When you get into javascript and user input interpretation, there's plenty of other html elements like dedicated `<form>` and `<button>` elements, but they all adhere to the same basic principles as explained here. 
