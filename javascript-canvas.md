@@ -13,12 +13,14 @@ It has multiple versions. In a nutshell:
 Remember that Google is an excellent tool for looking up *anything*.
 A good website for all-things Javascript is the [Mozilla Developer Network](developer.mozilla.org/en-US/docs).
 
+*Side note*: Do **not** use [w3schools](https://www.w3schools.com) for javascript. Their results often come up above the Mozilla Developer Network but their code examples are full of bad practices and outdated functions.
+
 ---
 ### Basics & Syntax
 ```js
 console.log('Hello World!')
 ```
-**Variables** store data for the program. There are two ways to declare them:
+#### *Variables* store data for the program. There are two ways to declare them:
 ```js
 const number = 3  // can't change later on
 let number = 3    // can change later on
@@ -26,28 +28,103 @@ let number = 3    // can change later on
 // old javascript, gross, don't use it
 var number = 3
 ```
+`let` statements act slightly differently than normal variable declarations - if you declare a let inside a conditional or loop it won't be accesible from outside the statement:
+```js
+let x = true
+// Doesn't work:
+if (x) {
+  let y = 'set!' // here y is inly accessible in the if statement and its children
+}
+console.log(y) // will log undefined
+// Works:
+let y // declare y outside of the if statement
+if (x) {
+  y = 'set!'
+}
+console.log(y) // will log 'set!''
+```
 Declaring only needs to happen once, so you should never redeclare variables.
 ```js
+// Wrong:
 let number = 3
 let number = 4 // error
-```
-bool = false
-int = 4
-string = "Heres some more text!"
+// Right:
+number = 4 // reassigns the value of an existing variable
 ```
 
-**Operators** modify or test variables. They consist of
->>>>>>> 85901a1048061b6b959a450b608fa9c5017806c0
+#### *Operators* modify or test variables.
 
-| Operator | Action
-|-
-| `=, +=, -=, *=, /=` | Assigns a value and applies any given arithmetic operator
-| `===` | Tests equality
-| `+, -, *, /` | Standard arithmetic
-| `<, >, <=, >=, !=` | Comparing values
-| `&&, ||, !`| Logical and, or, and not
+Most standard math operators are implemented:
+```js
+// Some basic arithmetic works as you'd expect.
+1 + 1 // = 2
+0.1 + 0.2 // = 0.30000000000000004
+8 - 1 // = 7
+10 * 2 // = 20
+35 / 5 // = 7
 
-**Conditional Statements** There are a number of conditional statements in JS:
+// Including uneven division.
+5 / 2 // = 2.5
+
+// And modulo division.
+10 % 2 // = 0
+30 % 4 // = 2
+18.5 % 7 // = 4.5
+
+// Bitwise operations also work when you perform a bitwise operation your float
+// is converted to a signed int *up to* 32 bits.
+1 << 2 // = 4
+
+// order of operations is enforced with parentheses.
+(1 + 3) * 2 // = 8
+
+// There's shorthand for performing math operations on variables:
+someVar += 5 // equivalent to someVar = someVar + 5 someVar is 10 now
+someVar *= 10 // now someVar is 100
+
+// and an even-shorter-hand for adding or subtracting 1
+someVar++ // now someVar is 101
+someVar-- // back to 100
+```
+You're not limited to numbers though
+```js
+// Boolean type.
+true
+false
+
+// Negation uses the ! symbol
+!true // = false
+!false // = true
+
+// There's also `null` and `undefined`.
+null      // used to indicate a deliberate non-value
+undefined // used to indicate a value is not currently present (although
+           // `undefined` is actually a value itself)
+```
+Last but not least the most important of which is the *string*
+```js
+// Strings are created with ' '
+'abc'
+
+// Strings are concatenated with +
+'Hello ' + 'world!' // = 'Hello world!'
+
+// ... which works with more than just strings
+'1, 2, ' + 3 // = '1, 2, 3'
+'Hello ' + ['world', '!'] // = 'Hello world,!'
+
+
+// You can access characters in a string with `charAt`
+'This is a string'.charAt(0)  // = 'T'
+
+// ...or use `substring` to get larger pieces.
+'Hello world'.substring(0, 5) // = 'Hello'
+
+// `length` is a property, so don't use ().
+'Hello'.length // = 5
+```
+
+#### *Conditional Statements* There are a number of conditional statements in JS:
 
 `if` statements test whether a condition is true and can be followed by an `else if` or `else` statement if the initial if statement is not true.
 ```js
@@ -60,12 +137,32 @@ if (i === 0) {
   i -= 1
 }
 ```
-`for` loops iterate over a number a set amount of times. `while` loops iterate while the conditional statement given is true.
+A quick library of comparators (the defined values simply represent potential variables, any of the valuse can be replaced with a variable)
+```js
+// Equality is ===
+1 === 1 // = true
+2 === 1 // = false
+
+// Inequality is !==
+1 !== 1 // = false
+2 !== 1 // = true
+
+// More comparisons
+1 < 10 // = true
+1 > 10 // = false
+2 <= 2 // = true
+2 >= 2 // = true
+
+// string alphabetical order can be compared with < and >
+'a' < 'b' // = true
+```
+`for` loops iterate over a number a set amount of times. `while` loops iterate while the conditional statement given is true. Both can be used for the same purposes.
 ```js
 // ( Iterator | Condition | Increment )
+// for each loop, the Increment is applied to the iterator while the condition is longer met
 for (let i = 0; i < 5; i++) {
   console.log(i)
-}
+} // will output 0, 1, 2, 3, 4, 5
 // Executes while j is less than 5
 let j = 0
 while (j < 5) {
@@ -73,15 +170,26 @@ while (j < 5) {
 }
 ```
 
+#### *Functions* can be used to declare code that is repeatedly used
 ```js
 function add (a, b) {
   return a + b
 } // use this for global functions
 
-const add = (a, b) => {
+passAFunctionToMe((a, b) => {
   return a + b
-} // use this for inline functions
+}) // use this for inline functions
 ```
+#### Including javascript in a page
+Here we include two scripts
+* `script1.js` loads before the DOM is loaded
+* `script2.js` loads while the DOM is being loaded - this is the reccomended method because it does not block loading the DOM until your javascript is loaded.
+
+Some online code snippet editors like Codepen automatically link your scripts
+```html
+<html>
+  <head>
+    <script type="text/javascript" src="script1.js"></script>
   </head>
   <body>
     <!-- DOM/HTML -->
@@ -89,12 +197,6 @@ const add = (a, b) => {
   </body>
 </html>
 ```
-There are two scripts:
-* `script1.js` loads before the DOM is loaded
-* `script2.js` loads while the DOM is being loaded
-
-Some online code snippet editors like Codepen automatically link your scripts
----
 ### Object Oriented Programming!
 
 Object oriented programming uses **classes** which define objects. Think of it as making your own type of variable.
@@ -105,7 +207,7 @@ class Car {
 }
 ```
 
-**Constructors** function as a template when initializing an object. Think of it as setting the parameters/blueprint for your object.
+Constructors function as a template when initializing an object. Think of it as setting the parameters/blueprint for your object.
 ```js
 class Car {
 	constructor (mileage, model, color) {
@@ -116,11 +218,11 @@ class Car {
 }
 ```
 
-Use **methods** as a function that can only be called by your object.
+Use methods as a function that can only be called by your object.
 ```js
 class Car {
   /* other code */
-  changeMileage (miles) {
+  incrementMileage (miles) {
     this.miles += miles
   }
 }
@@ -139,7 +241,7 @@ Now we will be interacting with a thing called **Canvas** which is a simple view
 ```html
 <body>
   <!-- DOM/HTML -->
-  <canvas id="c"></canvas>
+  <canvas id='c'></canvas>
 </body>
 ```
 
