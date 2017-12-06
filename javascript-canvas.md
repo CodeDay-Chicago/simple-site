@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Javscript & Canvas Workshop
+# Javascript & Canvas Workshop
 ## Javascript
 ### Before we begin...
 **Javascript, ECMAScript, JS, ES** is a programming language for websites and web applications.
@@ -300,7 +300,7 @@ window.requestAnimationFrame(GameLoop)
 Now we want to define a **Player Class** which can be reused for multiple players. This will have parameters inside of the constructor so that we can differentiate between different players. There are also methods that will do important functions for the game.
 ```js
 class Player {
-  constructor(pos, speed, color) {
+  constructor (pos, speed, color) {
     this.pos = pos
     this.startx = pos[0]
     this.starty = pos[1]
@@ -309,7 +309,7 @@ class Player {
   }
 
   move (dir) {
-    if(dir === 'up') {
+    if (dir === 'up') {
       this.pos[1] -= this.speed
     } else if (dir === 'down') {
       this.pos[1] += this.speed
@@ -370,7 +370,7 @@ document.body.addEventListener('keyup', function (e) {
 
 Now we implement the player **input, movement, and rendering** into the Game Loop
 ```js
-function GameLoop(){
+function GameLoop () {
   clear()
 
   //player 1
